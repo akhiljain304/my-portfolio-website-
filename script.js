@@ -3,8 +3,9 @@
  * Functions:
  *  - Mobile hamburger menu toggle & auto-close
  *  - Active section observer for desktop sidebar and mobile nav
- *  - Smooth anchor link scrolling with header offset
  *  - One-click copy email button with clipboard fallback
+ */
+
 // Immediately restore theme before paint to prevent flash of wrong theme
 (function() {
   try {
@@ -343,24 +344,28 @@ function initScrollReveal() {
       (entries, obs) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
+            entry.target.classList.remove('await-reveal');
             entry.target.classList.add('is-revealed');
-            // Unobserve so animation plays cleanly once
             obs.unobserve(entry.target);
           }
         });
       },
       {
-        root: null,
-        threshold: 0.12,
-        rootMargin: '0px 0px -40px 0px'
+        threshold: 0.08,
+        rootMargin: '0px 0px -20px 0px'
       }
     );
 
     revealCards.forEach((card) => {
-      observer.observe(card);
+      const rect = card.getBoundingClientRect();
+      if (rect.top < (window.innerHeight || document.documentElement.clientHeight)) {
+        card.classList.add('is-revealed');
+      } else {
+        card.classList.add('await-reveal');
+        observer.observe(card);
+      }
     });
   } else {
-    // Immediate fallback if IntersectionObserver is unsupported
     revealCards.forEach((card) => {
       card.classList.add('is-revealed');
     });
