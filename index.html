@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Akhil Jain | Personal Portfolio</title>
+  <meta name="description" content="Personal portfolio of Akhil Jain, 1st-year B.Tech CSE student at JECRC University, Jaipur. Exploring coding, AI tools, and web development.">
+  
+  <!-- Google Fonts: Playfair Display & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+  
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Top Mobile Bar (visible on mobile / small screens) -->
+  <header class="mobile-header" id="mobileHeader">
+    <div class="mobile-header-content">
+      <a href="#home" class="mobile-brand">
+        <div class="avatar-badge avatar-badge-sm">AJ</div>
+        <div class="mobile-brand-text">
+          <span class="brand-name">Akhil Jain</span>
+          <span class="brand-sub">B.Tech CSE</span>
+        </div>
+      </a>
+      <div class="mobile-header-controls">
+        <button type="button" class="mobile-theme-btn" id="mobileThemeBtn" aria-label="Toggle dark mode">
+          <svg class="theme-icon sun-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="theme-icon moon-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+        <button class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle Navigation Menu" aria-expanded="false">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Overlay Drawer -->
+  <div class="mobile-nav-drawer" id="mobileDrawer">
+    <nav class="mobile-nav">
+      <ul class="mobile-nav-list">
+        <li><a href="#home" class="mobile-nav-link active">Home</a></li>
+        <li><a href="#about" class="mobile-nav-link">About Me</a></li>
+        <li><a href="#education" class="mobile-nav-link">Education</a></li>
+        <li><a href="#skills" class="mobile-nav-link">Skills</a></li>
+        <li><a href="#projects" class="mobile-nav-link">Projects</a></li>
+        <li><a href="#certifications" class="mobile-nav-link">Milestones</a></li>
+        <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
+      </ul>
+      <div class="mobile-drawer-socials">
+        <a href="https://github.com/akhiljain304" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="GitHub Profile">
+          <svg class="icon" viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+          </svg>
+          GitHub
+        </a>
+        <a href="https://www.linkedin.com/in/akhil-jain-ba7173430" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="LinkedIn Profile">
+          <svg class="icon" viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+          </svg>
+          LinkedIn
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="layout-wrapper">
+    <!-- Desktop Left Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-inner">
+        <!-- Profile / Badge Header -->
+        <div class="sidebar-profile">
+          <div class="avatar-badge avatar-badge-lg">AJ</div>
+          <h1 class="sidebar-name">Akhil Jain</h1>
+          <p class="sidebar-role">B.Tech CSE Student</p>
+          <p class="sidebar-university">JECRC University, Jaipur</p>
+          <div class="sidebar-status-tag">
+            <span class="status-dot"></span>
+            1st Year &bull; Learning to Code
+          </div>
+        </div>
+
+        <!-- Navigation Links -->
+        <nav class="sidebar-nav" aria-label="Main Navigation">
+          <ul class="nav-list">
+            <li>
+              <a href="#home" class="nav-link active" data-section="home">
+                <span class="nav-num">01</span>
+                <span class="nav-text">Home</span>
+              </a>
+            </li>
+            <li>
+              <a href="#about" class="nav-link" data-section="about">
+                <span class="nav-num">02</span>
+                <span class="nav-text">About Me</span>
+              </a>
+            </li>
+            <li>
+              <a href="#education" class="nav-link" data-section="education">
+                <span class="nav-num">03</span>
+                <span class="nav-text">Education</span>
+              </a>
+            </li>
+            <li>
+              <a href="#skills" class="nav-link" data-section="skills">
+                <span class="nav-num">04</span>
+                <span class="nav-text">Skills</span>
+              </a>
+            </li>
+            <li>
+              <a href="#projects" class="nav-link" data-section="projects">
+                <span class="nav-num">05</span>
+                <span class="nav-text">Projects</span>
+              </a>
+            </li>
+            <li>
+              <a href="#certifications" class="nav-link" data-section="certifications">
+                <span class="nav-num">06</span>
+                <span class="nav-text">Milestones</span>
+              </a>
+            </li>
+            <li>
+              <a href="#contact" class="nav-link" data-section="contact">
+                <span class="nav-num">07</span>
+                <span class="nav-text">Contact</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <!-- Sidebar Socials & Theme Toggle Details -->
+        <div class="sidebar-footer">
+          <!-- Dark Mode Toggle Button in Sidebar -->
+          <div class="sidebar-theme-toggle">
+            <button type="button" class="theme-toggle-btn" id="themeToggleBtn" aria-label="Toggle dark mode" aria-pressed="false">
+              <span class="theme-toggle-left">
+                <span class="theme-icon-container">
+                  <svg class="theme-icon sun-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="5"></circle>
+                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                  </svg>
+                  <svg class="theme-icon moon-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                  </svg>
+                </span>
+                <span class="theme-toggle-label" id="themeToggleLabel">Dark Theme</span>
+              </span>
+              <span class="theme-switch-track">
+                <span class="theme-switch-thumb"></span>
+              </span>
+            </button>
+          </div>
+
+          <p class="sidebar-socials-label">Connect with me</p>
+          <div class="social-links-group">
+            <a href="https://github.com/akhiljain304" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Akhil's GitHub profile">
+              <svg class="icon" viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+              </svg>
+              <span>GitHub</span>
+            </a>
+            <a href="https://www.linkedin.com/in/akhil-jain-ba7173430" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Akhil's LinkedIn profile">
+              <svg class="icon" viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+              </svg>
+              <span>LinkedIn</span>
+            </a>
+          </div>
+          <p class="sidebar-copy">&copy; 2026 Akhil Jain</p>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+
+      <!-- Section 1: Home / Hero -->
+      <section id="home" class="section hero-section">
+        <div class="section-badge">Welcome &bull; Portfolio 2026</div>
+        <h1 class="hero-title">Akhil Jain</h1>
+        <p class="hero-tagline" id="heroTagline">
+          <span id="taglinePrefix" class="tagline-prefix">B.Tech CSE Student</span>
+          <span class="tagline-divider" id="taglineDivider">|</span>
+          <span class="tagline-focus" id="taglineFocus">Learning to Code</span><span class="typing-cursor" aria-hidden="true"></span>
+        </p>
+        <p class="hero-description">
+          Welcome to my personal corner on the web. I am an enthusiastic first-year computer science student building strong fundamentals, exploring modern AI tools, and turning ideas into clean, functional web projects.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary">
+            <span>See My Work</span>
+            <svg class="btn-icon" viewBox="0 0 20 20" fill="currentColor" width="16" height="16">
+              <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+            </svg>
+          </a>
+          <a href="#contact" class="btn btn-outline">
+            <span>Get in Touch</span>
+            <svg class="btn-icon" viewBox="0 0 20 20" fill="currentColor" width="16" height="16">
+              <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+              <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+            </svg>
+          </a>
+        </div>
+
+        <!-- Quick Glance Editorial Stats -->
+        <div class="glance-grid">
+          <div class="glance-card">
+            <span class="glance-label">Academic Path</span>
+            <span class="glance-value">B.Tech CSE Core</span>
+            <span class="glance-sub">JECRC University</span>
+          </div>
+          <div class="glance-card">
+            <span class="glance-label">Current Academic Year</span>
+            <span class="glance-value">1st Year</span>
+            <span class="glance-sub">Batch 2026 – Present</span>
+          </div>
+          <div class="glance-card">
+            <span class="glance-label">Current Focus</span>
+            <span class="glance-value">C &amp; Web Tech</span>
+            <span class="glance-sub">AI-Assisted Workflow</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 2: About Me -->
+      <section id="about" class="section">
+        <header class="section-header">
+          <span class="section-kicker">02 / Profile</span>
+          <h2 class="section-heading">About Me</h2>
+        </header>
+
+        <div class="card about-card">
+          <div class="about-quote-mark">&ldquo;</div>
+          <p class="about-lead">
+            I am a first-year CSE student at JECRC University. I am learning programming and exploring technology and AI tools to find the area I enjoy most. This portfolio is my first website.
+          </p>
+          <div class="about-divider"></div>
+          
+          <div class="about-meta-grid">
+            <div class="about-meta-item">
+              <span class="meta-label">Location</span>
+              <span class="meta-value">Jaipur, Rajasthan, India</span>
+            </div>
+            <div class="about-meta-item">
+              <span class="meta-label">Department</span>
+              <span class="meta-value">Computer Science &amp; Engineering</span>
+            </div>
+            <div class="about-meta-item">
+              <span class="meta-label">Interests</span>
+              <span class="meta-value">Web Development, AI Prompts &amp; Botpress</span>
+            </div>
+            <div class="about-meta-item">
+              <span class="meta-label">Status</span>
+              <span class="meta-value status-badge"><span class="status-dot"></span> Open to learning &amp; collaborations</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 3: Education -->
+      <section id="education" class="section">
+        <header class="section-header">
+          <span class="section-kicker">03 / Background</span>
+          <h2 class="section-heading">Education</h2>
+        </header>
+
+        <div class="timeline">
+          <!-- Item 1: JECRC -->
+          <div class="timeline-item">
+            <div class="timeline-marker">
+              <div class="timeline-dot"></div>
+            </div>
+            <div class="timeline-content card">
+              <div class="timeline-header">
+                <div>
+                  <span class="timeline-badge current-badge">Currently Enrolled</span>
+                  <h3 class="timeline-degree">B.Tech CSE Core</h3>
+                  <h4 class="timeline-school">JECRC University, Jaipur</h4>
+                </div>
+                <div class="timeline-date">1st year &bull; 2026 – present</div>
+              </div>
+              <p class="timeline-desc">
+                Enrolled in the foundational Computer Science &amp; Engineering core curriculum. Currently studying fundamental computing principles, problem solving, and starting coursework with C programming.
+              </p>
+            </div>
+          </div>
+
+          <!-- Item 2: Class 12 -->
+          <div class="timeline-item">
+            <div class="timeline-marker">
+              <div class="timeline-dot"></div>
+            </div>
+            <div class="timeline-content card">
+              <div class="timeline-header">
+                <div>
+                  <span class="timeline-badge school-badge">Senior Secondary</span>
+                  <h3 class="timeline-degree">Class 12</h3>
+                  <h4 class="timeline-school">Bhagwan Das Pareek School</h4>
+                </div>
+                <div class="timeline-date score-badge">Score: 68%</div>
+              </div>
+              <p class="timeline-desc">
+                Completed secondary school education with science stream subjects, establishing key logical and mathematical foundation before entering engineering studies.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 4: Skills -->
+      <section id="skills" class="section">
+        <header class="section-header">
+          <span class="section-kicker">04 / Capabilities</span>
+          <h2 class="section-heading">Skills</h2>
+          <p class="section-subtext">A snapshot of technologies, developer workflows, and tools I use and explore daily.</p>
+        </header>
+
+        <div class="skills-card card reveal-card">
+          <div class="skill-category">
+            <div class="category-header">
+              <span class="category-indicator"></span>
+              <h3 class="category-title">Core &amp; Web Foundations</h3>
+            </div>
+            <div class="pill-group">
+              <span class="skill-pill">
+                <span class="pill-icon">&lt;/&gt;</span>
+                HTML &amp; CSS (basics)
+              </span>
+            </div>
+          </div>
+
+          <div class="category-divider"></div>
+
+          <div class="skill-category">
+            <div class="category-header">
+              <span class="category-indicator"></span>
+              <h3 class="category-title">AI &amp; Productivity Tools</h3>
+            </div>
+            <div class="pill-group">
+              <span class="skill-pill">
+                <span class="pill-icon">&#10024;</span>
+                Using AI Tools (Antigravity, Botpress)
+              </span>
+            </div>
+          </div>
+
+          <div class="category-divider"></div>
+
+          <div class="skill-category">
+            <div class="category-header">
+              <span class="category-indicator"></span>
+              <h3 class="category-title">Version Control &amp; Deployment</h3>
+            </div>
+            <div class="pill-group">
+              <span class="skill-pill">
+                <span class="pill-icon">&#9729;</span>
+                GitHub &amp; Vercel (deployment basics)
+              </span>
+            </div>
+          </div>
+
+          <div class="category-divider"></div>
+
+          <div class="skill-category">
+            <div class="category-header">
+              <span class="category-indicator accent-indicator"></span>
+              <h3 class="category-title">In Active Progress</h3>
+            </div>
+            <div class="pill-group">
+              <span class="skill-pill learning-pill">
+                <span class="pill-icon">&#9874;</span>
+                Currently learning: C Programming
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 5: Projects -->
+      <section id="projects" class="section">
+        <header class="section-header">
+          <span class="section-kicker">05 / Featured Work</span>
+          <h2 class="section-heading">Projects</h2>
+          <p class="section-subtext">Hands-on application of concepts learned during my 1st year.</p>
+        </header>
+
+        <div class="project-grid">
+          <!-- Card 1: Personal Portfolio Website -->
+          <article class="card project-card reveal-card">
+            <div class="project-header">
+              <div class="project-badge-row">
+                <span class="badge badge-accent">Featured Project</span>
+                <span class="badge badge-subtle">First Website</span>
+              </div>
+              <h3 class="project-title">Personal Portfolio Website</h3>
+            </div>
+
+            <p class="project-description">
+              Personal Portfolio Website, my first website, built with the help of an AI tool (Antigravity), hosted on GitHub and deployed live on Vercel, with an AI chatbot that answers questions about me.
+            </p>
+
+            <div class="project-highlights">
+              <div class="highlight-item">
+                <svg class="check-icon" viewBox="0 0 20 20" fill="currentColor" width="16" height="16">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                <span>Editorial, light &amp; responsive layout with custom mobile navigation</span>
+              </div>
+              <div class="highlight-item">
+                <svg class="check-icon" viewBox="0 0 20 20" fill="currentColor" width="16" height="16">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                <span>AI Chatbot integration powered by Botpress knowledge-base</span>
+              </div>
+              <div class="highlight-item">
+                <svg class="check-icon" viewBox="0 0 20 20" fill="currentColor" width="16" height="16">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                <span>Automated continuous deployment via GitHub to Vercel</span>
+              </div>
+            </div>
+
+            <!-- Tech tags -->
+            <div class="project-tags">
+              <span class="tag">HTML5</span>
+              <span class="tag">CSS3</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag tag-accent">Antigravity</span>
+              <span class="tag tag-accent">Botpress AI</span>
+              <span class="tag">GitHub</span>
+              <span class="tag">Vercel</span>
+            </div>
+
+            <!-- Action buttons -->
+            <div class="project-actions">
+              <a href="https://github.com/akhiljain304" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
+                <svg class="btn-icon" viewBox="0 0 24 24" width="14" height="14" fill="currentColor">
+                  <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                </svg>
+                <span>Source on GitHub</span>
+              </a>
+              <a href="#home" class="btn btn-primary btn-sm">
+                <span>Current Live Site</span>
+                <svg class="btn-icon" viewBox="0 0 20 20" fill="currentColor" width="14" height="14">
+                  <path fill-rule="evenodd" d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z" clip-rule="evenodd"/>
+                </svg>
+              </a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Section 6: Certifications & Achievements -->
+      <section id="certifications" class="section">
+        <header class="section-header">
+          <span class="section-kicker">06 / Milestones</span>
+          <h2 class="section-heading">Certifications &amp; Achievements</h2>
+        </header>
+
+        <div class="achievements-container">
+          <div class="achievements-grid">
+            <!-- Achievement 1 -->
+            <div class="card achievement-card">
+              <div class="achievement-icon-box">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+              </div>
+              <div class="achievement-details">
+                <h3 class="achievement-title">Deployed my first website live on Vercel</h3>
+                <p class="achievement-desc">
+                  Learned git workflow, connecting repositories, DNS configuration, and automated build pipelines to deliver a live URL to the world.
+                </p>
+                <span class="achievement-tag">Live Deployment &bull; 2026</span>
+              </div>
+            </div>
+
+            <!-- Achievement 2 -->
+            <div class="card achievement-card">
+              <div class="achievement-icon-box">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M8 10h.01M12 10h.01M16 10h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                </svg>
+              </div>
+              <div class="achievement-details">
+                <h3 class="achievement-title">Built and embedded a personal AI chatbot using Botpress</h3>
+                <p class="achievement-desc">
+                  Configured natural language conversational flows and trained knowledge bases to answer inquiries about my studies, skills, and background.
+                </p>
+                <span class="achievement-tag">Conversational AI &bull; Botpress</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Note Callout Box -->
+          <div class="note-callout">
+            <div class="note-icon">&#9432;</div>
+            <div class="note-body">
+              <strong class="note-title">Current Roadmap:</strong>
+              <span class="note-text">No certifications yet. Goal: complete a beginner programming course this year.</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 7: Contact -->
+      <section id="contact" class="section">
+        <header class="section-header">
+          <span class="section-kicker">07 / Connect</span>
+          <h2 class="section-heading">Get in Touch</h2>
+          <p class="section-subtext">Have a question, feedback, or want to connect with a passionate 1st-year student?</p>
+        </header>
+
+        <div class="card contact-card">
+          <div class="contact-inner">
+            <div class="contact-header-text">
+              <h3 class="contact-prompt">Let's talk code &amp; technology</h3>
+              <p class="contact-info-p">
+                I am actively seeking mentorship, study groups, beginner open-source opportunities, and advice on mastering computer science fundamentals.
+              </p>
+            </div>
+
+            <!-- Email Highlight Box -->
+            <div class="email-box">
+              <div class="email-details">
+                <span class="email-label">Direct Email</span>
+                <a href="mailto:akhil304@gmail.com" class="email-address-link" id="emailAddress">akhil304@gmail.com</a>
+              </div>
+              <div class="email-actions">
+                <button type="button" class="btn btn-outline btn-sm" id="copyEmailBtn" aria-label="Copy email address to clipboard">
+                  <svg class="btn-icon" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                  </svg>
+                  <span id="copyBtnText">Copy Email</span>
+                </button>
+                <a href="mailto:akhil304@gmail.com" class="btn btn-primary btn-sm">
+                  <span>Send Email</span>
+                  <svg class="btn-icon" viewBox="0 0 20 20" fill="currentColor" width="14" height="14">
+                    <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+                    <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <div class="contact-meta-row">
+              <div class="meta-block">
+                <span class="meta-label">Location</span>
+                <span class="meta-content">Jaipur, Rajasthan, India</span>
+              </div>
+              <div class="meta-block">
+                <span class="meta-label">Response Time</span>
+                <span class="meta-content">Usually within 24–48 hours</span>
+              </div>
+              <div class="meta-block">
+                <span class="meta-label">Socials</span>
+                <div class="contact-social-pills">
+                  <a href="https://github.com/akhiljain304" target="_blank" rel="noopener noreferrer" class="contact-pill-link">GitHub &nearr;</a>
+                  <a href="https://www.linkedin.com/in/akhil-jain-ba7173430" target="_blank" rel="noopener noreferrer" class="contact-pill-link">LinkedIn &nearr;</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Site Footer -->
+      <footer class="site-footer">
+        <div class="footer-inner">
+          <div class="footer-left">
+            <p class="footer-copyright">&copy; 2026 Akhil Jain</p>
+            <p class="footer-sub">B.Tech CSE Core &bull; JECRC University, Jaipur</p>
+          </div>
+          <div class="footer-actions">
+            <a href="https://github.com/akhiljain304" target="_blank" rel="noopener noreferrer" class="social-btn footer-social-btn" aria-label="GitHub Profile">
+              <svg class="icon" viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+              </svg>
+              <span>GitHub</span>
+            </a>
+            <a href="https://www.linkedin.com/in/akhil-jain-ba7173430" target="_blank" rel="noopener noreferrer" class="social-btn footer-social-btn" aria-label="LinkedIn Profile">
+              <svg class="icon" viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+              </svg>
+              <span>LinkedIn</span>
+            </a>
+          </div>
+        </div>
+      </footer>
+
+    </main>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
